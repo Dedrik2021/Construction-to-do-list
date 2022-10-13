@@ -1,0 +1,87 @@
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid $black;
+    padding: 15px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $white;
+    z-index: 2;
+
+    &__close-btn {
+        font-size: 25px;
+        font-weight: 600;
+        color: $white;
+        background-color: $red;
+        padding: 0 10px 3px;
+        border-radius: 50%;
+        position: absolute;
+        right: -15px;
+        top: -15px;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        span {
+            font-family: $journalism;
+            font-size: 30px;
+            font-weight: 600;
+            color: $red;
+        }
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    &__wrapper {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    &__label {
+        position: absolute;
+        top: -6px;
+        font-size: 12px;
+        background-color: $white;
+        left: 15px;
+        padding: 0 3px;
+        color: $red;
+    }
+
+    &__input {
+        width: 100%;
+        border: 1px solid $black;
+        padding: 10px 30px 11px 10px;
+        border-radius: 5px;
+    }
+
+    .keyboard,
+    &__clean-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        font-weight: 600;
+        right: 15px;
+        opacity: 0.7;
+        cursor: pointer;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__btn {
+        padding: 10px 25px;
+        margin-top: 20px;
+    }
+}

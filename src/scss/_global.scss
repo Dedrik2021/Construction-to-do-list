@@ -1,0 +1,181 @@
+html,
+body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+body {
+    font-family: $gilroy;
+    font-size: 18px;
+    font-weight: 500;
+    color: $black;
+    line-height: 1.2;
+    letter-spacing: 0.05rem;
+    background-color: $white;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    &.lock {
+        overflow: hidden;
+        @include overlay;
+    }
+}
+
+main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1530px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    // &--lg {
+    //     max-width: 1920px;
+    //     width: 100%;
+    // }
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+
+    &--universal {
+        font-weight: 700;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    &--red {
+        color: $white;
+        background-color: $red;
+        transition: background-color 0.4s;
+
+        &:hover {
+            background-color: $black;
+        }
+
+        &:focus {
+            outline-color: $black;
+        }
+    }
+
+    &--red-hover {
+        transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+
+        &:hover {
+            color: $white;
+            background-color: $red;
+            border-color: transparent;
+        }
+    }
+
+    &--green {
+        transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+
+        &:hover {
+            color: $white;
+            background-color: $green;
+            border-color: transparent;
+        }
+    }
+
+    &--close {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -20px;
+        right: -20px;
+        border-radius: 50%;
+        background-color: $red;
+        transition: background-color 0.4s;
+
+        // @include r($mobile-sm) {
+        //     top: 20px;
+        //     right: 15px;
+        // }
+
+        span::before,
+        span::after,
+        span {
+            position: absolute;
+            z-index: 100;
+            margin-top: -1px;
+            right: 22%;
+            margin-left: -15px;
+            width: 15px;
+            height: 2px;
+            content: "";
+            background-color: $white;
+            transition: transform 0.4s;
+        }
+
+        span {
+            height: 0;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &:hover {
+            background-color: $black;
+        }
+    }
+
+    &--active {
+        color: $white;
+        background-color: rgba(0, 0, 0, 0.7);
+        pointer-events: none;
+    }
+}
+
+.title {
+    display: block;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 48px;
+    font-family: $journalism;
+
+    // @include r($mobile-md) {
+    //     font-size: 40px;
+    // }
+
+    // @include r($mobile-sm) {
+    //     font-size: 35px;
+    // }
+}
+
+.blur {
+    position: absolute;
+    top: 50px;
+    opacity: 0.5;
+    filter: blur(10px);
+    border-radius: 20px;
+    width: 982px;
+    height: 520px;
+}
