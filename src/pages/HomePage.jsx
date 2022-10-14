@@ -299,7 +299,9 @@ const HomePage = () => {
 				<div className="home__inner">
 					<div className="home__edit">
 						<CreateForm getUser={getUser} />
-						<SortBtn onFilter={onFilter} btnSort={btnSort} setBtnSort={setBtnSort} setBtnName={setBtnName} />
+						{auth.currentUser !== null && (
+							<SortBtn onFilter={onFilter} btnSort={btnSort} setBtnSort={setBtnSort} setBtnName={setBtnName} />
+						)}
 					</div>
 				</div>
 				<h1 className="home__title">
